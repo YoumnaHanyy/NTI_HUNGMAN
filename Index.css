@@ -1,0 +1,156 @@
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #3b82f6;
+            --background-color: #f3f4f6;
+            --text-color: #1f2937;
+            --correct-guess: #22c55e;
+            --incorrect-guess: #ef4444;
+            --button-bg: #e5e7eb;
+            --button-text: #4b5563;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 2rem 1rem;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .game-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .game-status {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--incorrect-guess);
+            margin: 0;
+            min-height: 1.5rem;
+        }
+
+        .visual-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        #hangman-canvas {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border: 2px solid var(--text-color);
+            background-color: #e5e7eb;
+            border-radius: 0.5rem;
+        }
+
+        .word-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .letter {
+            font-size: 2.5rem;
+            font-weight: 700;
+            border-bottom: 4px solid var(--text-color);
+            width: 2.5rem;
+            height: 3rem;
+            line-height: 3rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .keyboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .key {
+            padding: 0.75rem 0.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .key:not([disabled]):hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .key:active {
+            transform: scale(0.95);
+        }
+
+        .key[disabled] {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        .key.correct {
+            background-color: var(--correct-guess);
+            color: white;
+        }
+
+        .key.incorrect {
+            background-color: var(--incorrect-guess);
+            color: white;
+        }
+
+        .play-again {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-top: 1rem;
+        }
+
+        .play-again:hover {
+            background-color: #2563eb;
+        }
+
+        .play-again:active {
+            transform: scale(0.98);
+        }
